@@ -49,8 +49,8 @@ body {
     margin: 4.5rem 0;
 }
 
-.footer-socials>*:not(:first-child) {
-    margin-left: 2rem;
+.footer-socials>*:not(:last-child) {
+    margin-right: 2rem;
 }
 
 .footer-socials>a {
@@ -76,13 +76,14 @@ body {
 
 .time {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-.time>.time-unit:not(:first-child) {
-    margin-left: 1rem;
+.time>.time-unit:not(:last-child) {
+    margin-bottom: 1rem;
 }
 
 .time-bg {
@@ -168,6 +169,17 @@ body {
     letter-spacing: 0.185rem;
 }
 
+@media screen and (min-width: 340px) {
+    .time {
+        flex-direction: row;
+    }
+
+    .time>.time-unit:not(:last-child) {
+        margin-right: 1rem;
+        margin-bottom: 0;
+    }
+}
+
 @media screen and (min-width: 800px) {
     .countdown>h1 {
         margin-bottom: 6.25rem;
@@ -175,8 +187,8 @@ body {
         letter-spacing: 0.46875rem;
     }
 
-    .time>.time-unit:not(:first-child) {
-        margin-left: 2rem;
+    .time>.time-unit:not(:last-child) {
+        margin-right: 2rem;
     }
 
     .time-bg {
