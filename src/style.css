@@ -153,6 +153,11 @@ body {
     z-index: 10;
 }
 
+.flap-front {
+    /* needed some backface-visibility works as other browsers: https: //bugzilla.mozilla.org/show_bug.cgi?id=1201471 */
+    transform: rotateX(0deg);
+}
+
 .flap-back {
     transform: rotateX(-180deg);
 }
