@@ -16,8 +16,8 @@
     <article class="countdown">
       <h1>We're launching soon</h1>
 
-      <div class="time" aria-atomic='true'>
-        <div class="time-unit" id="days">
+      <div id="countdown" class="time" aria-atomic='true'>
+        <div class="time-unit days">
           <div class="time-bg">
             <div class="time-value">
               <div class="flap" aria-hidden="true">
@@ -32,7 +32,7 @@
           <div class="time-label">Days</div>
         </div>
 
-        <div class="time-unit" id="hours">
+        <div class="time-unit hours">
           <div class="time-bg">
             <div class="time-value">
               <div class="flap" aria-hidden="true">
@@ -47,7 +47,7 @@
           <div class="time-label">Hours</div>
         </div>
 
-        <div class="time-unit" id="minutes">
+        <div class="time-unit minutes">
           <div class="time-bg">
             <div class="time-value">
               <div class="flap" aria-hidden="true">
@@ -62,7 +62,7 @@
           <div class="time-label">Minutes</div>
         </div>
 
-        <div class="time-unit" id="seconds">
+        <div class="time-unit seconds">
           <div class="time-bg">
             <div class="time-value">
               <div class="flap" aria-hidden="true">
@@ -104,10 +104,12 @@
       </svg>
     </a>
   </footer>
-  <script type="module" src="countDown.js"></script>
   <script type="module">
     import CountDown from './countDown.js';
-    const countdown = new CountDown("Aug 1, 2023 00:06:00");
+
+    // Always set the time from today plus 14 days for demo purposes.
+    const nowPlus14Days = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000);
+    const countdown = new CountDown("countdown", nowPlus14Days);
     countdown.start();
   </script>
 </body>
