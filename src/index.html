@@ -104,7 +104,12 @@
       </svg>
     </a>
   </footer>
-  <script src="main.js"></script>
+  <script type="module" src="countDown.js"></script>
+  <script type="module">
+    import CountDown from './countDown.js';
+    const countdown = new CountDown("Aug 1, 2023 00:06:00");
+    countdown.start();
+  </script>
 </body>
 
 </html>
