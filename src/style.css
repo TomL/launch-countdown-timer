@@ -10,11 +10,13 @@
 /* set variable */
 :root {
     --white: hsl(0, 0%, 100%);
-    --grayish-blue: hsl(237, 18%, 59%);
-    --soft-red: hsl(345, 95%, 68%);
-    --desaturated-blue: hsl(236, 21%, 26%);
-    --very-dark-blue: hsl(235, 16%, 14%);
-    --mostly-black-blue: hsl(234, 17%, 12%);
+    --grayish-blue: hsl(237 18% 59%);
+    --soft-red: hsl(345 95% 68%);
+    --soft-red-top: hsl(345 95% 68% / 0.85);
+    --desaturated-blue: hsl(236 21% 26%);
+    --desaturated-blue-top: hsl(235 21% 22%);
+    --very-dark-blue: hsl(235 16% 14%);
+    --mostly-black-blue: hsl(234 17% 12%);
 }
 
 * {
@@ -127,12 +129,15 @@ body {
 .time-card-top,
 .flap-front {
     mask: radial-gradient(6px at 6px 100%, #0000 98%, #000) -6px;
+    background-color: var(--desaturated-blue-top);
     border-radius: 0.25rem 0.25rem 0 0;
+    color: var(--soft-red-top);
 }
 
 .time-card-bottom,
 .flap-back {
     mask: radial-gradient(6px at 6px 0, #0000 98%, #000) -6px;
+    background-color: var(--desaturated-blue);
     border-radius: 0 0 0.25rem 0.25rem;
     line-height: 0;
 }
@@ -144,7 +149,6 @@ body {
     overflow-y: hidden;
     min-width: 100%;
     height: 2.1875rem;
-    background-color: var(--desaturated-blue);
 }
 
 .flap-front,
@@ -164,8 +168,8 @@ body {
 }
 
 .time-label {
-    color: var(--grayish-blue);
     font-size: 0.4375rem;
+    color: var(--grayish-blue);
     letter-spacing: 0.185rem;
 }
 
@@ -181,6 +185,7 @@ body {
 }
 
 @media screen and (min-width: 800px) {
+
     .countdown>h1 {
         margin-bottom: 6.25rem;
         font-size: 1.375rem;
