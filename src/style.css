@@ -1,0 +1,216 @@
+@font-face {
+    font-display: swap;
+    src: url('assets/redhat-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-family: 'Red Hat Text';
+    font-style: normal;
+    font-weight: 700;
+}
+
+/* set variable */
+:root {
+    --white: hsl(0, 0%, 100%);
+    --grayish-blue: hsl(237, 18%, 59%);
+    --soft-red: hsl(345, 95%, 68%);
+    --desaturated-blue: hsl(236, 21%, 26%);
+    --very-dark-blue: hsl(235, 16%, 14%);
+    --mostly-black-blue: hsl(234, 17%, 12%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    font-family: 'Red Hat Text', sans-serif;
+    font-weight: bold;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    background: url('assets/images/bg-stars.svg'), url('assets/images/pattern-hills.svg'), linear-gradient(180deg, #1D1E28 0%, #261C2D 95%, #261A2D 100%);
+    background-repeat: repeat-x;
+    background-position: top, bottom, top;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4.5rem 0;
+}
+
+.footer-socials>*:not(:first-child) {
+    margin-left: 2rem;
+}
+
+.footer-socials>a {
+    fill: var(--grayish-blue);
+}
+
+.footer-socials>a:hover {
+    fill: var(--soft-red);
+}
+
+.countdown {
+    margin-top: 8.25rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.countdown>h1 {
+    margin-bottom: 3.375rem;
+    font-size: 1.125rem;
+    color: var(--white);
+    letter-spacing: 0.38375rem;
+}
+
+.time {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.time>.time-unit:not(:first-child) {
+    margin-left: 1rem;
+}
+
+.time-bg {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: var(--mostly-black-blue);
+    border-radius: 0.25rem;
+}
+
+.time-value {
+    perspective: 200px;
+    font-variant-numeric: tabular-nums;
+    position: relative;
+    width: 4.375rem;
+    height: 4.375rem;
+    border-radius: 0.25rem;
+    font-size: 2.5rem;
+    line-height: 4.375rem;
+    color: var(--soft-red);
+    text-align: center;
+    letter-spacing: 0.0675rem;
+}
+
+.time-card-line {
+    position: absolute;
+    z-index: 300;
+    top: 2.1875rem;
+    min-width: 100%;
+    height: 1px;
+    background-color: hsl(0 0% 0% / 0.25);
+}
+
+.flap {
+    transform-style: preserve-3d;
+    position: absolute;
+    z-index: 20;
+    min-width: 100%;
+    height: 100%;
+}
+
+.time-card-top,
+.flap-front {
+    mask: radial-gradient(6px at 6px 100%, #0000 98%, #000) -6px;
+    border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.time-card-bottom,
+.flap-back {
+    mask: radial-gradient(6px at 6px 0, #0000 98%, #000) -6px;
+    border-radius: 0 0 0.25rem 0.25rem;
+    line-height: 0;
+}
+
+.flap-front,
+.flap-back,
+.time-card-top,
+.time-card-bottom {
+    overflow-y: hidden;
+    min-width: 100%;
+    height: 2.1875rem;
+    background-color: var(--desaturated-blue);
+}
+
+.flap-front,
+.flap-back {
+    backface-visibility: hidden;
+    position: absolute;
+    z-index: 10;
+}
+
+.flap-back {
+    transform: rotateX(-180deg);
+}
+
+.time-label {
+    color: var(--grayish-blue);
+    font-size: 0.4375rem;
+    letter-spacing: 0.185rem;
+}
+
+@media screen and (min-width: 800px) {
+    .countdown>h1 {
+        margin-bottom: 6.25rem;
+        font-size: 1.375rem;
+        letter-spacing: 0.46875rem;
+    }
+
+    .time>.time-unit:not(:first-child) {
+        margin-left: 2rem;
+    }
+
+    .time-bg {
+        margin-bottom: 1rem;
+    }
+
+    .time-value {
+        min-width: 9.25rem;
+        height: 8.75rem;
+        font-size: 5rem;
+        line-height: 8.75rem;
+        letter-spacing: -0.15rem;
+    }
+
+    .time-card-line {
+        top: 4.375rem;
+    }
+
+    .time-card-top,
+    .flap-front {
+        mask: radial-gradient(12px at 12px 100%, #0000 98%, #000) -12px;
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .time-card-bottom,
+    .flap-back {
+        mask: radial-gradient(12px at 12px 0, #0000 98%, #000) -12px;
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+
+    .flap-front,
+    .flap-back,
+    .time-card-top,
+    .time-card-bottom {
+        height: 4.375rem;
+    }
+
+    .time-label {
+        font-size: 0.875rem;
+        letter-spacing: 0.37rem;
+    }
+}
