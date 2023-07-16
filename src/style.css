@@ -35,7 +35,7 @@ body {
     height: 100%;
     background: url('assets/images/bg-stars.svg'), url('assets/images/pattern-hills.svg'), linear-gradient(180deg, #1D1E28 0%, #261C2D 95%, #261A2D 100%);
     background-repeat: repeat-x;
-    background-position: top, bottom, top;
+    background-position: top, bottom right, top;
 }
 
 .content {
@@ -193,6 +193,7 @@ body {
 
     .time-bg {
         margin-bottom: 1rem;
+        padding-bottom: 0.625rem;
     }
 
     .time-value {
